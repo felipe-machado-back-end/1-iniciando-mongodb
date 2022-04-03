@@ -4,9 +4,12 @@ Nivelamento com fins de revisar de forma rápida sobre mongodb para o desenvolvi
 
 ## DEPENDÊNCIAS
 
-|      **BIBLIOTECA**       |                   **COMANDO**                    |
-| :-----------------------: | :----------------------------------------------: |
-|    **iniciar projeto**    |                npm run start-dev                 |
-| **instalar dependências** |                   npm install                    |
-| **ts-node e typescript**  | npm install -g typescript npm install -g ts-node |
-|        **nodemon**        |              npm install -g nodemon              |
+|      **BIBLIOTECA**       |         **COMANDO**         |
+| :-----------------------: | :-------------------------: |
+|    **iniciar projeto**    |      npm run start-dev      |
+| **instalar dependências** |         npm install         |
+|      **typescript**       |  npm install -g typescript  |
+|        **ts-node**        |   npm install -g ts-node    |
+|        **nodemon**        |   npm install -g nodemon    |
+|       **mongoose**        |    npm install mongoose     |
+|   **types do mongoose**   | npm install @types/mongoose |
