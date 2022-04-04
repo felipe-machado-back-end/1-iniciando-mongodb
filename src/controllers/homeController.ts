@@ -6,11 +6,11 @@ import User from "../models/User";
 export const home = async (req: Request, res: Response) => {
   let usuarios = await User.find({
     age: { $lt: 30 },
-  }).sort({
-    //aqui se ordena
-    age: -1, // 1 aumentando  -1 diminuindo
-  });
-
+    // trâs apenas um documento
+  })
+    .skip(2) // pula registro
+    .limit(2); // exibe registro
+  // SÃO TRÊS REGISTROS NO TOTAL OU SEJA VAI PULAR DOIS E IMPRIMIR 2,PORÉM SÓ A MAIS UM REGISTRO ENTÃO VAI IMPRIMIR SÓ ELE
   console.log("USUÁRIOS", usuarios);
 
   let age: number = 90;
