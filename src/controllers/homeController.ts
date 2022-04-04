@@ -4,14 +4,15 @@ import { Product } from "../models/Product";
 import User from "../models/User";
 
 export const home = async (req: Request, res: Response) => {
-  let usuarios = await User.find({
-    age: { $lt: 30 },
-    // trâs apenas um documento
-  })
-    .skip(2) // pula registro
-    .limit(2); // exibe registro
-  // SÃO TRÊS REGISTROS NO TOTAL OU SEJA VAI PULAR DOIS E IMPRIMIR 2,PORÉM SÓ A MAIS UM REGISTRO ENTÃO VAI IMPRIMIR SÓ ELE
-  console.log("USUÁRIOS", usuarios);
+  /*SALVANDO USANDO O CREATE */
+  let newUser = await User.create({
+    name: { firstName: "Monaliza", lastName: "Fernandes" },
+    email: "mona@paris.org",
+    age: 200,
+    interests: ["arte", "pizza"],
+  });
+
+  console.log("Novo usuário", newUser);
 
   let age: number = 90;
   let showOld: boolean = false;
