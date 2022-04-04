@@ -4,15 +4,14 @@ import { Product } from "../models/Product";
 import User from "../models/User";
 
 export const home = async (req: Request, res: Response) => {
-  /*SALVANDO USANDO O CREATE */
-  let newUser = await User.create({
-    name: { firstName: "Monaliza", lastName: "Fernandes" },
-    email: "mona@paris.org",
-    age: 200,
-    interests: ["arte", "pizza"],
-  });
-
-  console.log("Novo usuário", newUser);
+  /*SALVANDO USANDO O SAVE */
+  let newUser = new User();
+  newUser.name = { firstName: "Andre", lastName: "Soares" };
+  newUser.email = "andre@hotmail.com";
+  newUser.age = 35;
+  newUser.interests = ["programação", "skate"];
+  let resultado = await newUser.save();
+  console.log("NOVO USUÁRIO", resultado);
 
   let age: number = 90;
   let showOld: boolean = false;
