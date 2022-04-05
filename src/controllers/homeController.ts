@@ -4,9 +4,13 @@ import { Product } from "../models/Product";
 import User from "../models/User";
 
 export const home = async (req: Request, res: Response) => {
-  //utilizando updateMany
+  //utilizando save
 
-  await User.updateMany({ age: { $lte: 18 } }, { age: 25 });
+  let doc = await User.findOne({ email: "mona@paris.org" });
+  if (doc) {
+    doc.name.lastName = "juarez";
+    await doc.save();
+  }
 
   let age: number = 90;
   let showOld: boolean = false;
