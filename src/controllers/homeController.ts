@@ -4,13 +4,9 @@ import { Product } from "../models/Product";
 import User from "../models/User";
 
 export const home = async (req: Request, res: Response) => {
-  //utilizando save
-
-  let doc = await User.findOne({ email: "mona@paris.org" });
-  if (doc) {
-    doc.name.lastName = "juarez";
-    await doc.save();
-  }
+  //await User.findOneAndDelete({ email: "paulo.email.com" }); deletar 1 forma
+  let paulo = await User.findOne({ email: "fulano.email.com" });
+  await paulo?.remove();
 
   let age: number = 90;
   let showOld: boolean = false;
